@@ -1,6 +1,8 @@
+import Prathamesh from "./Prathamesh"
+
 function App() {
   return (
-    <h1>Prathamesh</h1>
+    <Prathamesh/>
   )
 }
 
