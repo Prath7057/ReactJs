@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="container">
-      <div className="row justify-content-center align-items-center vh-100 ">
+      <div className="row justify-content-center align-items-center ">
         <div className="">
           <div className="card shadow-sm">
             <div className="card-header bg-primary text-white text-center">
