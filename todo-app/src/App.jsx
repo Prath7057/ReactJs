@@ -1,25 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const savedTodos = localStorage.getItem("todos");
+    return savedTodos ? JSON.parse(savedTodos) : []; 
+  });
 
-  // Add a new task
   const addTodo = (task) => {
-    setTodos([...todos, task]);
+    setTodos((prevTodos) => {
+      const updatedTodos = [...prevTodos, task];
+      localStorage.setItem("todos", JSON.stringify(updatedTodos)); 
+      return updatedTodos;
+    });
   };
 
-  // Remove a task by index
   const removeTodo = (index) => {
-    const updatedTodos = todos.filter((_, i) => i !== index);
-    setTodos(updatedTodos);
+    setTodos((prevTodos) => {
+      const updatedTodos = [...prevTodos];
+      updatedTodos.splice(index, 1);
+      localStorage.setItem("todos", JSON.stringify(updatedTodos)); 
+      return updatedTodos;
+    });
   };
 
   return (
-    <div className="container">
-      <div className="row justify-content-center align-items-center ">
-        <div className="">
+    <div className="container mt-5" style={{ width: "50%" }}>
+      <div className="row justify-content-center align-items-center">
+        <div>
           <div className="card shadow-sm">
             <div className="card-header bg-primary text-white text-center">
               <h3 className="mb-0">To-Do List</h3>
