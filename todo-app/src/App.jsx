@@ -26,7 +26,7 @@ function App() {
   };
 
   return (
-    <div className="container mt-5" style={{ width: "70%" }}>
+    <div className="container mt-5" style={{ width: "100%" }}>
       <div className="row justify-content-center align-items-center">
         <div>
           <div className="card shadow-sm">
