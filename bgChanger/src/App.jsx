@@ -55,7 +55,7 @@ function App() {
           </button>
           <button
             className="px-4 py-2 bg-yellow-400 text-black rounded"
-            onClick={setBgColor("#FACC15")}
+            onClick={() => setBgColor("#FACC15")}
           >
             SUNFLOWER YELLOW
           </button>
