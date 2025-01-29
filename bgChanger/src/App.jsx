@@ -34,7 +34,7 @@ function App() {
           </button>
           <button
             className="px-4 py-2 text-black rounded"
-            style={{ backgroundColor: "#FBBF24" }}
+            style={{ backgroundColor: "#E6E6FA" }}
             onClick={() => setBgColor("#E6E6FA")}
           >
             LAVENDER
